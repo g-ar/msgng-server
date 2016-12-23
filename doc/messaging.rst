@@ -74,35 +74,71 @@ To reduce the message overhead, a simple header and data format is used, instead
 The requests and responses are outlined below:
 
 - Register
-  ["register", "username"]
-  ["info", "Registered and signed in"]
+
+  .. code-block:: js
+      
+
+      ["register", "username"]
+      ["info", "Registered and signed in"]
 
 - Signin
-  ["signin", "username"]
-  ["info", "Signed in"]
+
+  .. code-block:: js
+      
+
+      ["signin", "username"]
+      ["info", "Signed in"]
 
 - Send messages
-  ["send", "destination", "the message"]
+
+  .. code-block:: js
+      
+
+      ["send", "destination", "the message"]  
 
   - If client is offline
-    ["info", "<dst> offline"]
+
+    .. code-block:: js
+        
+
+        ["info", "<dst> offline"]
 
   - If <dst> does not exist
-    ["info", "<dst> unregistered"]
+
+    .. code-block:: js
+        
+
+        ["info", "<dst> unregistered"]
 
   - When <dst> comes online, it receives:
-    ["msg", "<src>", timestamp, "the message"]
+
+    .. code-block:: js
+        
+
+        ["msg", "<src>", timestamp, "the message"]
 
   - If duplicate msg is sent, <src> receives
-    ["info", "duplicate msg: dropped"]
+
+    .. code-block:: js
+        
+
+        ["info", "duplicate msg: dropped"]
 
 - Signout
   Close the connection to client and remove from the "active" list in the server
-  ["signout"]
+
+  .. code-block:: js
+      
+
+      ["signout"]
 
 - Unregister
   Close the connection and remove from the user database
-  ["unregister"]
+
+  .. code-block:: js
+      
+
+      ["unregister"]
 
 5 TODO 
 -------
