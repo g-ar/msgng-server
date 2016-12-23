@@ -69,6 +69,7 @@
 
 4 Message Format
 ----------------
+
 To reduce the message overhead, a simple header and data format is used, instead of larger xml or json structures. 
 The requests and responses are outlined below:
 
