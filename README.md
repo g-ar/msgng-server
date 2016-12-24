@@ -13,6 +13,7 @@ $ python server.py
   
 - Run clients in different hosts or terminals. More details can be found in doc.
 ```
+$ python client.py
 Signin or register
 r:A -- to register user A, s:A -- to signin user A
 s:b
