@@ -35,3 +35,18 @@ Hello
 #
 ```
 
+- Telnet can also be used as a client to send raw commands
+```
+$ telnet localhost 6666
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+["info", "Signin or register"]
+["register", "name1"]
+["info", "registered and signed in"]
+["send", "name2", "Hello"]
+["info", "name2 unregistered"]
+["signout"]
+["info", "signed out"]
+Connection closed by foreign host.
+```
