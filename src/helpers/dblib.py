@@ -62,6 +62,7 @@ def send_undelivered_messages(name, users):
             conn.send(json.dumps(sndmsg)+"\n")
         c.execute("UPDATE messages SET recd = 1 WHERE dst = ? AND recd = 0",(name, ))
         con.commit()
+        val = True
     except Exception as e:
         print e
     con.close()
@@ -88,6 +89,7 @@ def add_to_messages(src, dst, msg, ts, recd):
     try:
         c.execute("INSERT INTO messages VALUES (?, ?, ?, ?, ?)",(src, dst, msg, ts, recd))
         con.commit()
+        val = True
     except Exception as e:
         print e
     con.close()
